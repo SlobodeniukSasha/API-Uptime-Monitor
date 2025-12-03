@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/API-Uptime-Monitor.iml" filepath="$PROJECT_DIR$/.idea/API-Uptime-Monitor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/API-Health-Monitor.iml" filepath="$PROJECT_DIR$/.idea/API-Health-Monitor.iml" />
     </modules>
   </component>
 </project>

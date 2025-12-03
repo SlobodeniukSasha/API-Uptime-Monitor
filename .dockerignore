@@ -1,0 +1,16 @@
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.env/
+.venv/
+.git
+.gitignore
+*.log
+__MACOSX
+.DS_Store
+
+*.jpg
+*.jpeg
+*.JPG
+*.JPEG
