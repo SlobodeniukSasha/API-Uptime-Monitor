@@ -1,6 +1,5 @@
 import json
 import pytest
-import asyncio
 
 from unittest.mock import AsyncMock, patch
 from aioresponses import aioresponses
@@ -17,7 +16,7 @@ from backend.app.services.ai_analysis import (
 
 @pytest.fixture
 def mock_redis():
-    """Простой мок для Redis"""
+    """Mock for Redis"""
     redis_mock = AsyncMock()
     redis_mock.get = AsyncMock()
     redis_mock.set = AsyncMock()
@@ -128,12 +127,9 @@ RESOLUTION:
 @pytest.mark.asyncio
 async def test_duckduckgo_search():
     query1 = 'Why http://127.0.0.1:8000/ is down, Unexpected status code: 404'
-    # query2 = "Python KeyError"
     response1 = await duckduckgo_search(query1)
-    # response2 = await duckduckgo_search(query2)
 
     print('Response1: ', response1)
-    # print('Response2: ', response2)
     assert response1[0].get('title') != ''
     assert response1[0].get('href') != ''
     assert response1[0].get('snippet') != ''
@@ -192,4 +188,4 @@ async def test_ai_analyze_issue_timeout(mock_redis):
         assert isinstance(analysis, str)
         assert isinstance(resolution, str)
         assert "404" in analysis or "not found" in analysis.lower()
-        assert len(resolution.split('\n')) >= 3  # Должны быть шаги
+        assert len(resolution.split('\n')) >= 3

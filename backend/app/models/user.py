@@ -1,8 +1,6 @@
 from sqlalchemy import Column, Integer, String, DateTime, func
 from sqlalchemy.orm import relationship
 
-import datetime
-
 from ..core.database import Base
 
 
@@ -18,4 +16,5 @@ class User(Base):
         server_default=func.now(),
         nullable=False
     )
+
     monitors = relationship("Monitor", back_populates="owner")

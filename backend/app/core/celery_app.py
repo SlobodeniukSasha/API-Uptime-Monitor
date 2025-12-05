@@ -16,5 +16,3 @@ celery.conf.beat_schedule = {
         'schedule': 1.0,
     },
 }
-
-import backend.app.tasks.scheduler

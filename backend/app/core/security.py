@@ -2,10 +2,9 @@ from datetime import datetime, timedelta
 from typing import Optional
 import jwt
 
-from .config import SECRET_AUTH
+from backend.app.core.config import settings
 
-# Секрет и алгоритм
-JWT_SECRET_KEY = SECRET_AUTH
+JWT_SECRET_KEY = settings.SECRET_AUTH
 JWT_ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 REFRESH_TOKEN_EXPIRE_DAYS = 7

@@ -21,7 +21,12 @@ async def get_user_by_id(db: AsyncSession, user_id: int):
 
 async def create_user(db: AsyncSession, email: str, password: str, full_name: str | None = None):
     hashed_password = pwd_context.hash(password)
-    user = User(email=email, hashed_password=hashed_password, full_name=full_name,created_at=datetime.utcnow())
+    user = User(
+        email=email,
+        hashed_password=hashed_password,
+        full_name=full_name,
+        created_at=datetime.utcnow()
+    )
     db.add(user)
     await db.commit()
     await db.refresh(user)

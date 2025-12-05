@@ -62,7 +62,12 @@ class MonitorCRUD:
 
 class HistoryCRUD:
     @staticmethod
-    async def get_history(db: AsyncSession, current_user: int, monitor_id: int, limit: int = 10) -> Sequence[MonitorHistory]:
+    async def get_history(
+            db: AsyncSession,
+            current_user: int,
+            monitor_id: int,
+            limit: int = 10
+    ) -> Sequence[MonitorHistory]:
         result = await db.execute(
             select(MonitorHistory)
             .where(
@@ -76,7 +81,12 @@ class HistoryCRUD:
         return result.scalars().all()
 
     @staticmethod
-    async def get_problem_history(db: AsyncSession, current_user: int, monitor_id: int, limit: int = 10) -> Sequence[MonitorHistory]:
+    async def get_problem_history(
+            db: AsyncSession,
+            current_user: int,
+            monitor_id: int,
+            limit: int = 10
+    ) -> Sequence[MonitorHistory]:
         result = await db.execute(
             select(MonitorHistory)
             .where(
@@ -90,7 +100,8 @@ class HistoryCRUD:
         return result.scalars().all()
 
     @staticmethod
-    async def get_problem_with_analysis(db: AsyncSession, current_user: int, problem_id: int, monitor_id: int) -> Problem:
+    async def get_problem_with_analysis(db: AsyncSession, current_user: int, problem_id: int,
+                                        monitor_id: int) -> Problem:
         result = await db.execute(
             select(Problem)
             .options(selectinload(Problem.history))

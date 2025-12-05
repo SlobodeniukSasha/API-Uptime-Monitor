@@ -15,7 +15,7 @@ async def register(
         db: AsyncSession = Depends(get_async_session)
 ):
     """
-    Регистрация нового пользователя
+    Registering a new user
     """
     result = await AuthService.register_user(db, data)
     return TokenSchema(**result)
@@ -27,7 +27,7 @@ async def login(
         db: AsyncSession = Depends(get_async_session)
 ):
     """
-    Вход пользователя
+    User login
     """
     result = await AuthService.login_user(db, data)
     return TokenSchema(**result)
@@ -36,7 +36,7 @@ async def login(
 @router.post("/refresh/", response_model=TokenSchema)
 async def refresh_token(data: RefreshSchema):
     """
-    Обновление access токена
+    Refreshing the access token
     """
     result = await AuthService.refresh_tokens(data.refresh_token)
     return TokenSchema(**result)
@@ -48,8 +48,8 @@ async def logout(
         db: AsyncSession = Depends(get_async_session),
 ):
     """
-    Выход пользователя
-    Клиент должен удалить токены на своей стороне
+    User Logout
+    The client must delete tokens on its side.
     """
     if not authorization or not authorization.startswith("Bearer "):
         raise HTTPException(

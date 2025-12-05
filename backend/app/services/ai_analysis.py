@@ -8,7 +8,6 @@ from redis import asyncio as aioredis
 
 from backend.app.core.config import settings
 
-
 redis = aioredis.from_url(
     settings.REDIS_URL,
     encoding="utf-8",
@@ -64,7 +63,6 @@ def create_analysis_prompt(url: str, error: str, search_results: list) -> str:
         search_items = []
         for i, item in enumerate(search_results):
             title = item.get('title', 'No title').strip()
-            href = item.get('href', '')
             snippet = item.get('snippet', '').strip()
 
             if title or snippet:
@@ -77,9 +75,9 @@ def create_analysis_prompt(url: str, error: str, search_results: list) -> str:
 
         search_summary = "\n\n".join(search_items) if search_items else "No relevant search results found."
 
-        print("-"*50)
+        print("-" * 50)
         print(search_summary)
-        print("-"*50)
+        print("-" * 50)
 
     return f"""
 You are a Senior SRE/DevOps Engineer. Your task is to quickly analyze an incident detected by the monitoring system.
@@ -149,13 +147,18 @@ async def ai_analyze_issue(url: str, error_message: str, ddg_results: list) -> t
     except Exception as e:
         return ("AI error", f"Failed to process AI request: {e}")
 
-    print("-"*50)
+    print("-" * 50)
     print("Gemini_Response: ", response)
-    print("-"*50)
+    print("-" * 50)
 
     analysis = []
     resolution = []
     mode = None
+
+    import re
+
+    # TODO
+    # analysis_text = re.findall('PATTERN', response)
     for line in response.splitlines():
         text = line.strip()
         if not text:
