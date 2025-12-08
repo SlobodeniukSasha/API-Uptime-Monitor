@@ -9,7 +9,7 @@ from backend.app.services.auth_services import AuthService
 router = APIRouter(prefix="/auth", tags=["auth"])
 
 
-@router.post("/register/", response_model=TokenSchema)
+@router.post("/register/", status_code=status.HTTP_201_CREATED, response_model=TokenSchema)
 async def register(
         data: UserCreate,
         db: AsyncSession = Depends(get_async_session)

@@ -1,8 +1,33 @@
 import pytest
+import pytest_asyncio
+from starlette import status
+
+
+@pytest_asyncio.fixture
+def user_data():
+    return {
+        "email": "test@gmail.com",
+        "password": "secret123",
+        "full_name": "Test User"
+    }
+
+
+@pytest_asyncio.fixture
+async def authenticated_client(client, user_data):
+    await client.post("/auth/register/", json=user_data)
+
+    user_login_data = {'email': 'test@gmail.com', "password": "secret123"}
+
+    response = await client.post("/auth/login/", json=user_login_data)
+    assert response.status_code == status.HTTP_200_OK
+
+    access_token = response.json().get('access_token')
+    client.headers.update({"Authorization": f"Bearer {access_token}"})
+    return client
 
 
 @pytest.mark.asyncio
-async def test_create_monitor(client):
+async def test_create_monitor(client, authenticated_client):
     payload = {
         "url": "http://example.com",
         "name": "example",
@@ -12,7 +37,7 @@ async def test_create_monitor(client):
 
     response = await client.post("/monitors/", json=payload)
 
-    assert response.status_code == 201
+    assert response.status_code == status.HTTP_201_CREATED
     data = response.json()
     assert data["name"] == "example"
     assert data["expected_status_code"] == 200
@@ -20,14 +45,14 @@ async def test_create_monitor(client):
 
 
 @pytest.mark.asyncio
-async def test_get_monitors(client):
+async def test_get_monitors(client, authenticated_client):
     response = await client.get("/monitors/")
     assert response.status_code == 200
     assert isinstance(response.json(), list)
 
 
 @pytest.mark.asyncio
-async def test_get_single_monitor(client):
+async def test_get_single_monitor(client, authenticated_client):
     create_resp = await client.post("/monitors/", json={
         "url": "http://google.com",
         "name": "google",
@@ -43,7 +68,7 @@ async def test_get_single_monitor(client):
 
 
 @pytest.mark.asyncio
-async def test_delete_monitor(client):
+async def test_delete_monitor(client, authenticated_client):
     create_resp = await client.post("/monitors/", json={
         "url": "http://delete.com",
         "name": "delete-me",

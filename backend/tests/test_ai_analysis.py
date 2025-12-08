@@ -4,13 +4,13 @@ import pytest
 from unittest.mock import AsyncMock, patch
 from aioresponses import aioresponses
 
+from backend.app.services.utils.gemini import GEMINI_URL
 from backend.app.services.duckduckgo import duckduckgo_search
 from backend.app.services.ai_analysis import (
     call_gemini,
     create_analysis_prompt,
     prompt_cache_key,
     ai_analyze_issue,
-    GEMINI_URL,
 )
 
 
@@ -18,7 +18,7 @@ from backend.app.services.ai_analysis import (
 def mock_redis():
     """Mock for Redis"""
     redis_mock = AsyncMock()
-    redis_mock.get = AsyncMock()
+    redis_mock.get = AsyncMock(return_value=json.dumps({"analysis": "cached A", "resolution": "cached R"}))
     redis_mock.set = AsyncMock()
     return redis_mock
 
@@ -76,7 +76,7 @@ def test_create_analysis_prompt_basic():
     prompt = create_analysis_prompt(
         "https://a.com",
         "500 error",
-        {"results": [{"title": "Fix 500"}, {"title": "Cause 500"}]}
+        [{"title": "Fix 500"}, {"title": "Cause 500"}]
     )
 
     assert "You are a Senior SRE/DevOps Engineer." in prompt
@@ -85,13 +85,15 @@ def test_create_analysis_prompt_basic():
 @pytest.mark.asyncio
 async def test_ai_analyze_issue_hits_cache(mock_redis):
     cached = {"analysis": "cached A", "resolution": "cached R"}
+    mock_redis.get.return_value = json.dumps(cached)
 
     await mock_redis.set(
         prompt_cache_key("https://x", "err"),
         json.dumps(cached)
     )
 
-    a, r = await ai_analyze_issue("https://x", "err", {})
+    with patch("backend.app.services.ai_analysis.redis", mock_redis):
+        a, r = await ai_analyze_issue("https://x", "err", [])
 
     assert a == "cached A"
     assert r == "cached R"
@@ -109,10 +111,10 @@ RESOLUTION:
 """
 
     with patch("backend.app.services.ai_analysis.call_gemini", AsyncMock(return_value=fake_response)):
-        a, r = await ai_analyze_issue("https://a", "err", {})
+        a, r = await ai_analyze_issue("https://a", "err", [])
 
-    assert "analysis" in a.lower()
-    assert "resolution" in r.lower()
+    assert "this is analysis line." in a.lower()
+    assert "step one" in r.lower()
 
     cache_key = prompt_cache_key("https://a", "err")
     cached_raw = await mock_redis.get(cache_key)
@@ -121,7 +123,6 @@ RESOLUTION:
     cached = json.loads(cached_raw)
     assert "analysis" in cached
     assert "resolution" in cached
-
 
 
 @pytest.mark.asyncio
@@ -138,21 +139,21 @@ async def test_duckduckgo_search():
 @pytest.mark.asyncio
 async def test_ai_analyze_issue_timeout(mock_redis):
     mock_search_results = [
-       {'title': 'HTTP 404 - Wikipedia',
-        'href': 'https://en.wikipedia.org/wiki/HTTP_404',
-        'snippet': '2 weeks ago - In HTTP, the 404 response status code indicates that a web client (i.e. browser) was able to communicate with a server, but the server could not provide the requested resource . The server may not have the resource or it may not wish to disclose whether it has the resource.'},
-       {'title': 'List of HTTP status codes - Wikipedia',
-        'href': 'https://en.wikipedia.org/wiki/List_of_HTTP_status_codes',
-        'snippet': '1 week ago - Indicates that the resource is accessible via an alternate URL indicated in the Location header field . The HTTP/1.0 specification (which used reason phrase "Moved Temporarily") required the client to redirect with the same method, but popular ...'},
-       {'title': '404 Not Found - HTTP | MDN',
-        'href': 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/404',
-        'snippet': 'The HTTP 404 Not Found client error response status code indicates that the server cannot find the requested resource . Links that lead to a 404 page are often called broken or dead links and can be subject to link rot.'},
-       {'title': 'What is a 404 Error Code? What It Means and How to Fix It',
-        'href': 'https://www.techtarget.com/whatis/definition/404-status-code',
-        'snippet': 'This definition explains what 404 errors are and what website users can do to find and fix these errors. Also examine several custom 404 error messages.'},
-       {'title': 'HTTP/1.1: Status Code Definitions',
-        'href': 'https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html',
-        'snippet': 'If the request method was not HEAD and the server wishes to make public why the request has not been fulfilled, it SHOULD describe the reason for the refusal in the entity. If the server does not wish to make this information available to the client , the status code 404 (Not Found) can be used ...'}
+        {'title': 'HTTP 404 - Wikipedia',
+         'href': 'https://en.wikipedia.org/wiki/HTTP_404',
+         'snippet': '2 weeks ago - In HTTP, the 404 response status code indicates that a web client (i.e. browser) was able to communicate with a server, but the server could not provide the requested resource . The server may not have the resource or it may not wish to disclose whether it has the resource.'},
+        {'title': 'List of HTTP status codes - Wikipedia',
+         'href': 'https://en.wikipedia.org/wiki/List_of_HTTP_status_codes',
+         'snippet': '1 week ago - Indicates that the resource is accessible via an alternate URL indicated in the Location header field . The HTTP/1.0 specification (which used reason phrase "Moved Temporarily") required the client to redirect with the same method, but popular ...'},
+        {'title': '404 Not Found - HTTP | MDN',
+         'href': 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/404',
+         'snippet': 'The HTTP 404 Not Found client error response status code indicates that the server cannot find the requested resource . Links that lead to a 404 page are often called broken or dead links and can be subject to link rot.'},
+        {'title': 'What is a 404 Error Code? What It Means and How to Fix It',
+         'href': 'https://www.techtarget.com/whatis/definition/404-status-code',
+         'snippet': 'This definition explains what 404 errors are and what website users can do to find and fix these errors. Also examine several custom 404 error messages.'},
+        {'title': 'HTTP/1.1: Status Code Definitions',
+         'href': 'https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html',
+         'snippet': 'If the request method was not HEAD and the server wishes to make public why the request has not been fulfilled, it SHOULD describe the reason for the refusal in the entity. If the server does not wish to make this information available to the client , the status code 404 (Not Found) can be used ...'}
     ]
 
     mock_ai_response = """
@@ -175,7 +176,6 @@ async def test_ai_analyze_issue_timeout(mock_redis):
                   AsyncMock(return_value=mock_search_results)), \
             patch("backend.app.services.ai_analysis.call_gemini",
                   AsyncMock(return_value=mock_ai_response)):
-
         analysis, resolution = await ai_analyze_issue(
             url="http://127.0.0.1:8000/",
             error_message="Unexpected status code: 404",
