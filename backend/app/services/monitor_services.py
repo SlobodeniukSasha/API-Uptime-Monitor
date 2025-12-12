@@ -2,12 +2,13 @@ from typing import Optional, Sequence
 
 from sqlalchemy.orm import selectinload
 
-from ..models.monitor import Monitor
-from ..models.problem import Problem
-from ..models.monitor_history import MonitorHistory
-from ..schemas.monitor import MonitorCreate
+
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
+
+from backend.app.models import User
+from backend.app.models import Monitor, MonitorHistory, Problem
+from backend.app.schemas.monitor import MonitorCreate
 
 
 class MonitorCRUD:
@@ -71,10 +72,7 @@ class HistoryCRUD:
         result = await db.execute(
             select(MonitorHistory)
             .where(
-                MonitorHistory.monitor_id == monitor_id,
-
-                # Monitor.owner_id == current_user
-            )
+                MonitorHistory.monitor_id == monitor_id)
             .order_by(MonitorHistory.checked_at.desc())
             .limit(limit)
         )
@@ -100,15 +98,19 @@ class HistoryCRUD:
         return result.scalars().all()
 
     @staticmethod
-    async def get_problem_with_analysis(db: AsyncSession, current_user: int, problem_id: int,
+    async def get_problem_with_analysis(db: AsyncSession, current_user_id: int, problem_id: int,
                                         monitor_id: int) -> Problem:
-        result = await db.execute(
+        query = (
             select(Problem)
+            .join(Monitor, Problem.monitor_id == monitor_id)
+            .join(User, Monitor.owner_id == current_user_id)
             .options(selectinload(Problem.history))
             .where(
                 Problem.id == problem_id,
-                Monitor.owner_id == current_user,
-                Problem.monitor_id == monitor_id
+                Monitor.id == monitor_id,
+                User.id == current_user_id
             )
         )
+        result = await db.execute(query)
         return result.scalar_one_or_none()
+

@@ -1,4 +1,6 @@
 import asyncio
+from logging import getLogger, basicConfig, DEBUG, FileHandler, ERROR, StreamHandler, Formatter
+
 import httpx
 from datetime import datetime, timezone
 
@@ -9,6 +11,23 @@ from backend.app.core.database import sync_session_maker
 
 from backend.app.models import Monitor, MonitorHistory, Problem
 from backend.app.tasks.alerts import send_alert_email
+
+
+logger = getLogger('monitoring')
+
+FORMAT = '%(asctime)s : %(name)s : %(levelname)s : %(message)s'
+formatter = Formatter(FORMAT)
+
+
+file_handler = FileHandler("data.log")
+file_handler.setLevel(DEBUG)
+file_handler.setFormatter(formatter)
+
+console = StreamHandler()
+console.setLevel(ERROR)
+console.setFormatter(formatter)
+
+basicConfig(level=DEBUG, format=FORMAT, handlers=[file_handler, console])
 
 
 @celery.task
@@ -55,10 +74,13 @@ async def _check_monitor_async(monitor_id: int):
         session.flush()
 
         if error_message:
+            logger.info(f'Monitor {monitor.name} receive unexpected response')
             try:
                 ddg = await duckduckgo_search(f"Why {monitor.url} is down, {error_message}")
 
-                print(ddg)
+                logger.info('-' * 50)
+                logger.info(f'DDg:  {ddg}')
+                logger.info('-' * 50)
 
                 if ddg:
                     ai_analysis, ai_recommendations = await ai_analyze_issue(
@@ -67,16 +89,17 @@ async def _check_monitor_async(monitor_id: int):
                         ddg_results=ddg,
                     )
                 else:
+                    logger.error('Something went wrong with duckduckgo_search ')
                     ai_analysis, ai_recommendations = "Search for solutions failed", "Check the error manually"
 
             except Exception as e:
-                print(f"Error in problem analysis: {e}")
+                logger.error(f"Error in problem analysis: {e}")
                 ai_analysis, ai_recommendations = "Analysis error", str(e)
 
-            print("-" * 50)
-            print('AI Analysis: ', ai_analysis)
-            print('AI Recommendations: ', ai_recommendations)
-            print("-" * 50)
+            logger.info('-' * 50)
+            logger.info('AI Analysis: ' + ai_analysis)
+            logger.info('AI Recommendations: ' + ai_recommendations)
+            logger.info('-' * 50)
 
             send_alert_email.delay(
                 user_email=monitor.owner.email,

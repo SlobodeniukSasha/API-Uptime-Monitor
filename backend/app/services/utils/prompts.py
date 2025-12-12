@@ -1,12 +1,12 @@
-import logging
+from celery.utils.log import get_task_logger
 
-log = logging.getLogger(__name__)
+log = get_task_logger(__name__)
 
 
 def create_analysis_prompt(url: str, error: str, search_results: list) -> str:
     if not search_results:
         search_summary = "No search results available."
-        log.warning("No search results for incident: %s", url)
+        log.info("No search results for incident: %s", url)
     else:
         log.info(f"Creating prompt for {url} with {len(search_results)} search results")
         parts = []

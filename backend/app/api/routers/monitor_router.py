@@ -137,7 +137,7 @@ async def get_more_about_current_monitor_problem(
 
     problem = await HistoryCRUD.get_problem_with_analysis(
         db=db,
-        current_user=current_user.id,
+        current_user_id=current_user.id,
         problem_id=problem_id,
         monitor_id=monitor_id,
     )

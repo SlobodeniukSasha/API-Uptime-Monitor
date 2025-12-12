@@ -26,6 +26,8 @@ class Settings(BaseSettings):
     EMAIL_HOST_PASSWORD: str = os.getenv('EMAIL_HOST_PASSWORD')
 
     GEMINI_API_KEY: str = os.getenv('GEMINI_API_KEY')
+    DEEPSEEK_API_KEY: str = os.getenv('DEEPSEEK_API_KEY')
+    HUGGING_FACE_API_KEY: str = os.getenv('HUGGING_FACE_API_KEY')
 
     REDIS_URL: str = os.getenv('REDIS_URL')
 

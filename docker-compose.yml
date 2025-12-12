@@ -63,7 +63,7 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: health_monitor_celery
-    command: celery -A backend.app.core.celery_app beat --loglevel=INFO
+    command: celery -A backend.app.core.celery_app worker --loglevel=INFO --pool=solo
     env_file:
       - ./.env
     depends_on:

@@ -1,15 +1,15 @@
 import asyncio
 import json
-import logging
+from logging import getLogger
 
 from redis import asyncio as aioredis
 
+from backend.app.services.utils.hugging_face import call_huggingface
 from backend.app.services.utils.cache import prompt_cache_key
-from backend.app.services.utils.gemini import call_gemini
 from backend.app.services.utils.prompts import create_analysis_prompt
 from backend.app.core.config import settings
 
-log = logging.getLogger(__name__)
+logger = getLogger(__name__)
 
 redis = aioredis.from_url(
     settings.REDIS_URL,
@@ -31,33 +31,47 @@ async def ai_analyze_issue(url: str, error_message: str, ddg_results: list) -> t
 
     cached = await redis.get(cache_key)
 
+    logger.info('-' * 50)
+    logger.info('Inside_ai_analise')
+    logger.info('-' * 50)
+
     if cached:
         try:
             data = json.loads(cached)
+
+            logger.info('-' * 50)
+            logger.info('Returning data from cache: ', data)
+            logger.info('-' * 50)
             return data["analysis"], data["resolution"]
         except json.JSONDecodeError:
             pass
 
     prompt = create_analysis_prompt(url, error_message, ddg_results)
 
-    log.info(f'Gemini prompt: {prompt}')
+    logger.debug('-' * 50)
+    logger.info(f'\nAI Model prompt: {prompt}')
+    logger.debug('-' * 50)
+
     try:
         response = await asyncio.wait_for(
-            call_gemini(prompt),
+            call_huggingface(prompt),
             timeout=25
         )
+
     except asyncio.TimeoutError:
         return ("AI timeout", "AI service is not responding — handle manually.")
     except Exception as e:
         return ("AI error", f"Failed to process AI request: {e}")
 
-    log.info(f'Gemini response: {response}')
+    logger.info('-' * 50)
+    logger.info(f'AI Model response: {response}')
+    logger.info('-' * 50)
 
     analysis = []
     resolution = []
     mode = None
 
-    import re
+    # import re
 
     # TODO
     # analysis_text = re.findall('PATTERN', response)
@@ -82,5 +96,9 @@ async def ai_analyze_issue(url: str, error_message: str, ddg_results: list) -> t
     }
 
     await redis.set(cache_key, json.dumps(result), ex=3600)
+
+    logger.info('-' * 50)
+    logger.info('Returning_ai_analise')
+    logger.info('-' * 50)
 
     return result["analysis"], result["resolution"]

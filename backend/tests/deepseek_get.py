@@ -1,19 +1,21 @@
 import requests
+
 from backend.app.core.config import settings
 
-API_KEY = settings.GEMINI_API_KEY
+API_KEY = settings.DEEPSEEK_API_KEY
 
-url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent"
+url = "https://api.deepseek.com/v1/chat/completions"
 
 payload = {
-    "contents": [
-        {"parts": [{"text": "ping"}]}
+    "model": "deepseek-chat",
+    "messages": [
+        {"role": "user", "content": "ping"}
     ]
 }
 
 headers = {
     "Content-Type": "application/json",
-    "x-goog-api-key": API_KEY
+    "Authorization": f"Bearer {API_KEY}"
 }
 
 response = requests.post(url, json=payload, headers=headers)

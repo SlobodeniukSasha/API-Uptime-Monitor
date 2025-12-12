@@ -1,11 +1,12 @@
 import smtplib
 from email.message import EmailMessage
+from logging import getLogger
 
 from backend.app.core.config import settings
 from backend.app.core.celery_app import celery
 
 
-# logging = logging(__name__)
+logger = getLogger(__name__)
 
 @celery.task
 def send_alert_email(
@@ -48,7 +49,7 @@ def send_alert_email(
             server.starttls()
             server.login(settings.EMAIL_HOST_USER, settings.EMAIL_HOST_PASSWORD)
             server.send_message(msg)
-        print(f"Alert was sent to: {user_email}")
+        logger.info(f"Alert was sent to: {user_email}")
 
     except Exception as e:
-        print(f"Failed to send alert: {e}")
+        logger.exception(f"Failed to send alert: {e}")
