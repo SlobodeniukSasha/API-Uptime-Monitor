@@ -1,0 +1,960 @@
+2025-12-12 18:56:28,523 : celery.utils.functional : DEBUG : 
+def backend_cleanup():
+    return 1
+
+2025-12-12 18:56:28,524 : celery.utils.functional : DEBUG : 
+def check_monitor(monitor_id):
+    return 1
+
+2025-12-12 18:56:28,524 : celery.utils.functional : DEBUG : 
+def chain(*args, **kwargs):
+    return 1
+
+2025-12-12 18:56:28,525 : celery.utils.functional : DEBUG : 
+def xstarmap(task, it):
+    return 1
+
+2025-12-12 18:56:28,525 : celery.utils.functional : DEBUG : 
+def send_alert_email(user_email, monitor_name, monitor_user_name, monitor_url, monitor_status, ai_recommendations, monitor_check_interval):
+    return 1
+
+2025-12-12 18:56:28,525 : celery.utils.functional : DEBUG : 
+def accumulate(self, *args, **kwargs):
+    return 1
+
+2025-12-12 18:56:28,526 : celery.utils.functional : DEBUG : 
+def schedule_monitoring():
+    return 1
+
+2025-12-12 18:56:28,527 : celery.utils.functional : DEBUG : 
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+2025-12-12 18:56:28,527 : celery.utils.functional : DEBUG : 
+def chunks(task, it, n):
+    return 1
+
+2025-12-12 18:56:28,527 : celery.utils.functional : DEBUG : 
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+2025-12-12 18:56:28,528 : celery.utils.functional : DEBUG : 
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+2025-12-12 18:56:28,528 : celery.utils.functional : DEBUG : 
+def xmap(task, it):
+    return 1
+
+2025-12-12 18:56:41,554 : celery.utils.functional : DEBUG : 
+def chain(*args, **kwargs):
+    return 1
+
+2025-12-12 18:56:41,554 : celery.utils.functional : DEBUG : 
+def xstarmap(task, it):
+    return 1
+
+2025-12-12 18:56:41,555 : celery.utils.functional : DEBUG : 
+def check_monitor(monitor_id):
+    return 1
+
+2025-12-12 18:56:41,555 : celery.utils.functional : DEBUG : 
+def accumulate(self, *args, **kwargs):
+    return 1
+
+2025-12-12 18:56:41,555 : celery.utils.functional : DEBUG : 
+def schedule_monitoring():
+    return 1
+
+2025-12-12 18:56:41,556 : celery.utils.functional : DEBUG : 
+def send_alert_email(user_email, monitor_name, monitor_user_name, monitor_url, monitor_status, ai_recommendations, monitor_check_interval):
+    return 1
+
+2025-12-12 18:56:41,556 : celery.utils.functional : DEBUG : 
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+2025-12-12 18:56:41,556 : celery.utils.functional : DEBUG : 
+def chunks(task, it, n):
+    return 1
+
+2025-12-12 18:56:41,557 : celery.utils.functional : DEBUG : 
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+2025-12-12 18:56:41,557 : celery.utils.functional : DEBUG : 
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+2025-12-12 18:56:41,557 : celery.utils.functional : DEBUG : 
+def xmap(task, it):
+    return 1
+
+2025-12-12 18:56:41,558 : celery.utils.functional : DEBUG : 
+def backend_cleanup():
+    return 1
+
+2025-12-12 19:44:03,018 : celery.utils.functional : DEBUG : 
+def backend_cleanup():
+    return 1
+
+2025-12-12 19:44:03,018 : celery.utils.functional : DEBUG : 
+def chain(*args, **kwargs):
+    return 1
+
+2025-12-12 19:44:03,019 : celery.utils.functional : DEBUG : 
+def xstarmap(task, it):
+    return 1
+
+2025-12-12 19:44:03,019 : celery.utils.functional : DEBUG : 
+def accumulate(self, *args, **kwargs):
+    return 1
+
+2025-12-12 19:44:03,019 : celery.utils.functional : DEBUG : 
+def check_monitor(monitor_id):
+    return 1
+
+2025-12-12 19:44:03,020 : celery.utils.functional : DEBUG : 
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+2025-12-12 19:44:03,020 : celery.utils.functional : DEBUG : 
+def send_alert_email(user_email, monitor_name, monitor_user_name, monitor_url, monitor_status, ai_recommendations, monitor_check_interval):
+    return 1
+
+2025-12-12 19:44:03,020 : celery.utils.functional : DEBUG : 
+def chunks(task, it, n):
+    return 1
+
+2025-12-12 19:44:03,020 : celery.utils.functional : DEBUG : 
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+2025-12-12 19:44:03,021 : celery.utils.functional : DEBUG : 
+def schedule_monitoring():
+    return 1
+
+2025-12-12 19:44:03,021 : celery.utils.functional : DEBUG : 
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+2025-12-12 19:44:03,021 : celery.utils.functional : DEBUG : 
+def xmap(task, it):
+    return 1
+
+2025-12-12 19:44:10,233 : celery.utils.functional : DEBUG : 
+def chain(*args, **kwargs):
+    return 1
+
+2025-12-12 19:44:10,234 : celery.utils.functional : DEBUG : 
+def xstarmap(task, it):
+    return 1
+
+2025-12-12 19:44:10,234 : celery.utils.functional : DEBUG : 
+def check_monitor(monitor_id):
+    return 1
+
+2025-12-12 19:44:10,235 : celery.utils.functional : DEBUG : 
+def accumulate(self, *args, **kwargs):
+    return 1
+
+2025-12-12 19:44:10,235 : celery.utils.functional : DEBUG : 
+def schedule_monitoring():
+    return 1
+
+2025-12-12 19:44:10,235 : celery.utils.functional : DEBUG : 
+def send_alert_email(user_email, monitor_name, monitor_user_name, monitor_url, monitor_status, ai_recommendations, monitor_check_interval):
+    return 1
+
+2025-12-12 19:44:10,236 : celery.utils.functional : DEBUG : 
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+2025-12-12 19:44:10,236 : celery.utils.functional : DEBUG : 
+def chunks(task, it, n):
+    return 1
+
+2025-12-12 19:44:10,237 : celery.utils.functional : DEBUG : 
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+2025-12-12 19:44:10,237 : celery.utils.functional : DEBUG : 
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+2025-12-12 19:44:10,237 : celery.utils.functional : DEBUG : 
+def xmap(task, it):
+    return 1
+
+2025-12-12 19:44:10,237 : celery.utils.functional : DEBUG : 
+def backend_cleanup():
+    return 1
+
+2025-12-12 20:03:29,543 : celery.utils.functional : DEBUG : 
+def backend_cleanup():
+    return 1
+
+2025-12-12 20:03:29,543 : celery.utils.functional : DEBUG : 
+def check_monitor(monitor_id):
+    return 1
+
+2025-12-12 20:03:29,543 : celery.utils.functional : DEBUG : 
+def chain(*args, **kwargs):
+    return 1
+
+2025-12-12 20:03:29,544 : celery.utils.functional : DEBUG : 
+def xstarmap(task, it):
+    return 1
+
+2025-12-12 20:03:29,544 : celery.utils.functional : DEBUG : 
+def accumulate(self, *args, **kwargs):
+    return 1
+
+2025-12-12 20:03:29,544 : celery.utils.functional : DEBUG : 
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+2025-12-12 20:03:29,545 : celery.utils.functional : DEBUG : 
+def chunks(task, it, n):
+    return 1
+
+2025-12-12 20:03:29,545 : celery.utils.functional : DEBUG : 
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+2025-12-12 20:03:29,545 : celery.utils.functional : DEBUG : 
+def send_alert_email(user_email, monitor_name, monitor_user_name, monitor_url, monitor_status, ai_recommendations, monitor_check_interval):
+    return 1
+
+2025-12-12 20:03:29,545 : celery.utils.functional : DEBUG : 
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+2025-12-12 20:03:29,546 : celery.utils.functional : DEBUG : 
+def xmap(task, it):
+    return 1
+
+2025-12-12 20:03:29,546 : celery.utils.functional : DEBUG : 
+def schedule_monitoring():
+    return 1
+
+2025-12-12 20:03:53,124 : celery.utils.functional : DEBUG : 
+def chain(*args, **kwargs):
+    return 1
+
+2025-12-12 20:03:53,125 : celery.utils.functional : DEBUG : 
+def xstarmap(task, it):
+    return 1
+
+2025-12-12 20:03:53,125 : celery.utils.functional : DEBUG : 
+def schedule_monitoring():
+    return 1
+
+2025-12-12 20:03:53,125 : celery.utils.functional : DEBUG : 
+def accumulate(self, *args, **kwargs):
+    return 1
+
+2025-12-12 20:03:53,125 : celery.utils.functional : DEBUG : 
+def check_monitor(monitor_id):
+    return 1
+
+2025-12-12 20:03:53,126 : celery.utils.functional : DEBUG : 
+def send_alert_email(user_email, monitor_name, monitor_user_name, monitor_url, monitor_status, ai_recommendations, monitor_check_interval):
+    return 1
+
+2025-12-12 20:03:53,126 : celery.utils.functional : DEBUG : 
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+2025-12-12 20:03:53,126 : celery.utils.functional : DEBUG : 
+def chunks(task, it, n):
+    return 1
+
+2025-12-12 20:03:53,127 : celery.utils.functional : DEBUG : 
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+2025-12-12 20:03:53,127 : celery.utils.functional : DEBUG : 
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+2025-12-12 20:03:53,128 : celery.utils.functional : DEBUG : 
+def xmap(task, it):
+    return 1
+
+2025-12-12 20:03:53,128 : celery.utils.functional : DEBUG : 
+def backend_cleanup():
+    return 1
+
+2025-12-12 20:22:20,544 : celery.utils.functional : DEBUG : 
+def backend_cleanup():
+    return 1
+
+2025-12-12 20:22:20,545 : celery.utils.functional : DEBUG : 
+def schedule_monitoring():
+    return 1
+
+2025-12-12 20:22:20,545 : celery.utils.functional : DEBUG : 
+def chain(*args, **kwargs):
+    return 1
+
+2025-12-12 20:22:20,546 : celery.utils.functional : DEBUG : 
+def xstarmap(task, it):
+    return 1
+
+2025-12-12 20:22:20,546 : celery.utils.functional : DEBUG : 
+def accumulate(self, *args, **kwargs):
+    return 1
+
+2025-12-12 20:22:20,546 : celery.utils.functional : DEBUG : 
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+2025-12-12 20:22:20,546 : celery.utils.functional : DEBUG : 
+def chunks(task, it, n):
+    return 1
+
+2025-12-12 20:22:20,547 : celery.utils.functional : DEBUG : 
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+2025-12-12 20:22:20,547 : celery.utils.functional : DEBUG : 
+def send_alert_email(user_email, monitor_name, monitor_user_name, monitor_url, monitor_status, ai_recommendations, monitor_check_interval):
+    return 1
+
+2025-12-12 20:22:20,547 : celery.utils.functional : DEBUG : 
+def check_monitor(monitor_id):
+    return 1
+
+2025-12-12 20:22:20,548 : celery.utils.functional : DEBUG : 
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+2025-12-12 20:22:20,548 : celery.utils.functional : DEBUG : 
+def xmap(task, it):
+    return 1
+
+2025-12-12 20:22:25,870 : celery.utils.functional : DEBUG : 
+def chain(*args, **kwargs):
+    return 1
+
+2025-12-12 20:22:25,871 : celery.utils.functional : DEBUG : 
+def xstarmap(task, it):
+    return 1
+
+2025-12-12 20:22:25,871 : celery.utils.functional : DEBUG : 
+def check_monitor(monitor_id):
+    return 1
+
+2025-12-12 20:22:25,871 : celery.utils.functional : DEBUG : 
+def accumulate(self, *args, **kwargs):
+    return 1
+
+2025-12-12 20:22:25,872 : celery.utils.functional : DEBUG : 
+def schedule_monitoring():
+    return 1
+
+2025-12-12 20:22:25,872 : celery.utils.functional : DEBUG : 
+def send_alert_email(user_email, monitor_name, monitor_user_name, monitor_url, monitor_status, ai_recommendations, monitor_check_interval):
+    return 1
+
+2025-12-12 20:22:25,872 : celery.utils.functional : DEBUG : 
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+2025-12-12 20:22:25,873 : celery.utils.functional : DEBUG : 
+def chunks(task, it, n):
+    return 1
+
+2025-12-12 20:22:25,873 : celery.utils.functional : DEBUG : 
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+2025-12-12 20:22:25,873 : celery.utils.functional : DEBUG : 
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+2025-12-12 20:22:25,873 : celery.utils.functional : DEBUG : 
+def xmap(task, it):
+    return 1
+
+2025-12-12 20:22:25,874 : celery.utils.functional : DEBUG : 
+def backend_cleanup():
+    return 1
+
+2025-12-12 21:38:01,098 : celery.utils.functional : DEBUG : 
+def backend_cleanup():
+    return 1
+
+2025-12-12 21:38:01,099 : celery.utils.functional : DEBUG : 
+def chain(*args, **kwargs):
+    return 1
+
+2025-12-12 21:38:01,100 : celery.utils.functional : DEBUG : 
+def xstarmap(task, it):
+    return 1
+
+2025-12-12 21:38:01,100 : celery.utils.functional : DEBUG : 
+def send_alert_email(user_email, monitor_name, monitor_user_name, monitor_url, monitor_status, ai_recommendations, monitor_check_interval):
+    return 1
+
+2025-12-12 21:38:01,100 : celery.utils.functional : DEBUG : 
+def accumulate(self, *args, **kwargs):
+    return 1
+
+2025-12-12 21:38:01,101 : celery.utils.functional : DEBUG : 
+def check_monitor(monitor_id):
+    return 1
+
+2025-12-12 21:38:01,101 : celery.utils.functional : DEBUG : 
+def schedule_monitoring():
+    return 1
+
+2025-12-12 21:38:01,101 : celery.utils.functional : DEBUG : 
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+2025-12-12 21:38:01,101 : celery.utils.functional : DEBUG : 
+def chunks(task, it, n):
+    return 1
+
+2025-12-12 21:38:01,102 : celery.utils.functional : DEBUG : 
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+2025-12-12 21:38:01,102 : celery.utils.functional : DEBUG : 
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+2025-12-12 21:38:01,102 : celery.utils.functional : DEBUG : 
+def xmap(task, it):
+    return 1
+
+2025-12-12 21:38:12,342 : celery.utils.functional : DEBUG : 
+def chain(*args, **kwargs):
+    return 1
+
+2025-12-12 21:38:12,342 : celery.utils.functional : DEBUG : 
+def xstarmap(task, it):
+    return 1
+
+2025-12-12 21:38:12,343 : celery.utils.functional : DEBUG : 
+def schedule_monitoring():
+    return 1
+
+2025-12-12 21:38:12,343 : celery.utils.functional : DEBUG : 
+def accumulate(self, *args, **kwargs):
+    return 1
+
+2025-12-12 21:38:12,343 : celery.utils.functional : DEBUG : 
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+2025-12-12 21:38:12,344 : celery.utils.functional : DEBUG : 
+def chunks(task, it, n):
+    return 1
+
+2025-12-12 21:38:12,344 : celery.utils.functional : DEBUG : 
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+2025-12-12 21:38:12,345 : celery.utils.functional : DEBUG : 
+def check_monitor(monitor_id):
+    return 1
+
+2025-12-12 21:38:12,345 : celery.utils.functional : DEBUG : 
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+2025-12-12 21:38:12,345 : celery.utils.functional : DEBUG : 
+def xmap(task, it):
+    return 1
+
+2025-12-12 21:38:12,346 : celery.utils.functional : DEBUG : 
+def backend_cleanup():
+    return 1
+
+2025-12-12 21:38:12,346 : celery.utils.functional : DEBUG : 
+def send_alert_email(user_email, monitor_name, monitor_user_name, monitor_url, monitor_status, ai_recommendations, monitor_check_interval):
+    return 1
+
+2025-12-12 21:40:16,186 : celery.utils.functional : DEBUG : 
+def backend_cleanup():
+    return 1
+
+2025-12-12 21:40:16,186 : celery.utils.functional : DEBUG : 
+def chain(*args, **kwargs):
+    return 1
+
+2025-12-12 21:40:16,187 : celery.utils.functional : DEBUG : 
+def xstarmap(task, it):
+    return 1
+
+2025-12-12 21:40:16,187 : celery.utils.functional : DEBUG : 
+def send_alert_email(user_email, monitor_name, monitor_user_name, monitor_url, monitor_status, ai_recommendations, monitor_check_interval):
+    return 1
+
+2025-12-12 21:40:16,187 : celery.utils.functional : DEBUG : 
+def accumulate(self, *args, **kwargs):
+    return 1
+
+2025-12-12 21:40:16,188 : celery.utils.functional : DEBUG : 
+def check_monitor(monitor_id):
+    return 1
+
+2025-12-12 21:40:16,188 : celery.utils.functional : DEBUG : 
+def schedule_monitoring():
+    return 1
+
+2025-12-12 21:40:16,188 : celery.utils.functional : DEBUG : 
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+2025-12-12 21:40:16,189 : celery.utils.functional : DEBUG : 
+def chunks(task, it, n):
+    return 1
+
+2025-12-12 21:40:16,189 : celery.utils.functional : DEBUG : 
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+2025-12-12 21:40:16,189 : celery.utils.functional : DEBUG : 
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+2025-12-12 21:40:16,190 : celery.utils.functional : DEBUG : 
+def xmap(task, it):
+    return 1
+
+2025-12-12 21:41:11,077 : celery.utils.functional : DEBUG : 
+def chain(*args, **kwargs):
+    return 1
+
+2025-12-12 21:41:11,077 : celery.utils.functional : DEBUG : 
+def xstarmap(task, it):
+    return 1
+
+2025-12-12 21:41:11,078 : celery.utils.functional : DEBUG : 
+def schedule_monitoring():
+    return 1
+
+2025-12-12 21:41:11,078 : celery.utils.functional : DEBUG : 
+def accumulate(self, *args, **kwargs):
+    return 1
+
+2025-12-12 21:41:11,079 : celery.utils.functional : DEBUG : 
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+2025-12-12 21:41:11,079 : celery.utils.functional : DEBUG : 
+def chunks(task, it, n):
+    return 1
+
+2025-12-12 21:41:11,079 : celery.utils.functional : DEBUG : 
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+2025-12-12 21:41:11,080 : celery.utils.functional : DEBUG : 
+def check_monitor(monitor_id):
+    return 1
+
+2025-12-12 21:41:11,080 : celery.utils.functional : DEBUG : 
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+2025-12-12 21:41:11,080 : celery.utils.functional : DEBUG : 
+def xmap(task, it):
+    return 1
+
+2025-12-12 21:41:11,080 : celery.utils.functional : DEBUG : 
+def backend_cleanup():
+    return 1
+
+2025-12-12 21:41:11,081 : celery.utils.functional : DEBUG : 
+def send_alert_email(user_email, monitor_name, monitor_user_name, monitor_url, monitor_status, ai_recommendations, monitor_check_interval):
+    return 1
+
+2025-12-12 21:50:20,930 : celery.utils.functional : DEBUG : 
+def backend_cleanup():
+    return 1
+
+2025-12-12 21:50:20,930 : celery.utils.functional : DEBUG : 
+def chain(*args, **kwargs):
+    return 1
+
+2025-12-12 21:50:20,930 : celery.utils.functional : DEBUG : 
+def xstarmap(task, it):
+    return 1
+
+2025-12-12 21:50:20,931 : celery.utils.functional : DEBUG : 
+def accumulate(self, *args, **kwargs):
+    return 1
+
+2025-12-12 21:50:20,931 : celery.utils.functional : DEBUG : 
+def check_monitor(monitor_id):
+    return 1
+
+2025-12-12 21:50:20,931 : celery.utils.functional : DEBUG : 
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+2025-12-12 21:50:20,931 : celery.utils.functional : DEBUG : 
+def send_alert_email(user_email, monitor_name, monitor_user_name, monitor_url, monitor_status, ai_recommendations, monitor_check_interval):
+    return 1
+
+2025-12-12 21:50:20,932 : celery.utils.functional : DEBUG : 
+def chunks(task, it, n):
+    return 1
+
+2025-12-12 21:50:20,932 : celery.utils.functional : DEBUG : 
+def schedule_monitoring():
+    return 1
+
+2025-12-12 21:50:20,932 : celery.utils.functional : DEBUG : 
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+2025-12-12 21:50:20,933 : celery.utils.functional : DEBUG : 
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+2025-12-12 21:50:20,933 : celery.utils.functional : DEBUG : 
+def xmap(task, it):
+    return 1
+
+2025-12-12 21:50:28,725 : celery.utils.functional : DEBUG : 
+def chain(*args, **kwargs):
+    return 1
+
+2025-12-12 21:50:28,726 : celery.utils.functional : DEBUG : 
+def xstarmap(task, it):
+    return 1
+
+2025-12-12 21:50:28,726 : celery.utils.functional : DEBUG : 
+def accumulate(self, *args, **kwargs):
+    return 1
+
+2025-12-12 21:50:28,727 : celery.utils.functional : DEBUG : 
+def schedule_monitoring():
+    return 1
+
+2025-12-12 21:50:28,727 : celery.utils.functional : DEBUG : 
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+2025-12-12 21:50:28,728 : celery.utils.functional : DEBUG : 
+def chunks(task, it, n):
+    return 1
+
+2025-12-12 21:50:28,728 : celery.utils.functional : DEBUG : 
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+2025-12-12 21:50:28,728 : celery.utils.functional : DEBUG : 
+def send_alert_email(user_email, monitor_name, monitor_user_name, monitor_url, monitor_status, ai_recommendations, monitor_check_interval):
+    return 1
+
+2025-12-12 21:50:28,729 : celery.utils.functional : DEBUG : 
+def check_monitor(monitor_id):
+    return 1
+
+2025-12-12 21:50:28,729 : celery.utils.functional : DEBUG : 
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+2025-12-12 21:50:28,729 : celery.utils.functional : DEBUG : 
+def xmap(task, it):
+    return 1
+
+2025-12-12 21:50:28,730 : celery.utils.functional : DEBUG : 
+def backend_cleanup():
+    return 1
+
+2025-12-12 21:54:17,423 : celery.utils.functional : DEBUG : 
+def backend_cleanup():
+    return 1
+
+2025-12-12 21:54:17,423 : celery.utils.functional : DEBUG : 
+def chain(*args, **kwargs):
+    return 1
+
+2025-12-12 21:54:17,425 : celery.utils.functional : DEBUG : 
+def xstarmap(task, it):
+    return 1
+
+2025-12-12 21:54:17,425 : celery.utils.functional : DEBUG : 
+def accumulate(self, *args, **kwargs):
+    return 1
+
+2025-12-12 21:54:17,430 : celery.utils.functional : DEBUG : 
+def check_monitor(monitor_id):
+    return 1
+
+2025-12-12 21:54:17,435 : celery.utils.functional : DEBUG : 
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+2025-12-12 21:54:17,440 : celery.utils.functional : DEBUG : 
+def send_alert_email(user_email, monitor_name, monitor_user_name, monitor_url, monitor_status, ai_recommendations, monitor_check_interval):
+    return 1
+
+2025-12-12 21:54:17,440 : celery.utils.functional : DEBUG : 
+def chunks(task, it, n):
+    return 1
+
+2025-12-12 21:54:17,441 : celery.utils.functional : DEBUG : 
+def schedule_monitoring():
+    return 1
+
+2025-12-12 21:54:17,441 : celery.utils.functional : DEBUG : 
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+2025-12-12 21:54:17,442 : celery.utils.functional : DEBUG : 
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+2025-12-12 21:54:17,442 : celery.utils.functional : DEBUG : 
+def xmap(task, it):
+    return 1
+
+2025-12-12 21:54:27,041 : celery.utils.functional : DEBUG : 
+def chain(*args, **kwargs):
+    return 1
+
+2025-12-12 21:54:27,041 : celery.utils.functional : DEBUG : 
+def xstarmap(task, it):
+    return 1
+
+2025-12-12 21:54:27,041 : celery.utils.functional : DEBUG : 
+def accumulate(self, *args, **kwargs):
+    return 1
+
+2025-12-12 21:54:27,042 : celery.utils.functional : DEBUG : 
+def schedule_monitoring():
+    return 1
+
+2025-12-12 21:54:27,042 : celery.utils.functional : DEBUG : 
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+2025-12-12 21:54:27,042 : celery.utils.functional : DEBUG : 
+def chunks(task, it, n):
+    return 1
+
+2025-12-12 21:54:27,043 : celery.utils.functional : DEBUG : 
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+2025-12-12 21:54:27,044 : celery.utils.functional : DEBUG : 
+def send_alert_email(user_email, monitor_name, monitor_user_name, monitor_url, monitor_status, ai_recommendations, monitor_check_interval):
+    return 1
+
+2025-12-12 21:54:27,045 : celery.utils.functional : DEBUG : 
+def check_monitor(monitor_id):
+    return 1
+
+2025-12-12 21:54:27,045 : celery.utils.functional : DEBUG : 
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+2025-12-12 21:54:27,045 : celery.utils.functional : DEBUG : 
+def xmap(task, it):
+    return 1
+
+2025-12-12 21:54:27,045 : celery.utils.functional : DEBUG : 
+def backend_cleanup():
+    return 1
+
+2025-12-12 21:54:51,990 : celery.utils.functional : DEBUG : 
+def backend_cleanup():
+    return 1
+
+2025-12-12 21:54:51,991 : celery.utils.functional : DEBUG : 
+def chain(*args, **kwargs):
+    return 1
+
+2025-12-12 21:54:51,991 : celery.utils.functional : DEBUG : 
+def xstarmap(task, it):
+    return 1
+
+2025-12-12 21:54:51,991 : celery.utils.functional : DEBUG : 
+def accumulate(self, *args, **kwargs):
+    return 1
+
+2025-12-12 21:54:51,992 : celery.utils.functional : DEBUG : 
+def check_monitor(monitor_id):
+    return 1
+
+2025-12-12 21:54:51,992 : celery.utils.functional : DEBUG : 
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+2025-12-12 21:54:51,993 : celery.utils.functional : DEBUG : 
+def send_alert_email(user_email, monitor_name, monitor_user_name, monitor_url, monitor_status, ai_recommendations, monitor_check_interval):
+    return 1
+
+2025-12-12 21:54:51,993 : celery.utils.functional : DEBUG : 
+def chunks(task, it, n):
+    return 1
+
+2025-12-12 21:54:51,993 : celery.utils.functional : DEBUG : 
+def schedule_monitoring():
+    return 1
+
+2025-12-12 21:54:51,994 : celery.utils.functional : DEBUG : 
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+2025-12-12 21:54:51,994 : celery.utils.functional : DEBUG : 
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+2025-12-12 21:54:51,994 : celery.utils.functional : DEBUG : 
+def xmap(task, it):
+    return 1
+
+2025-12-12 21:55:01,438 : celery.utils.functional : DEBUG : 
+def chain(*args, **kwargs):
+    return 1
+
+2025-12-12 21:55:01,439 : celery.utils.functional : DEBUG : 
+def xstarmap(task, it):
+    return 1
+
+2025-12-12 21:55:01,439 : celery.utils.functional : DEBUG : 
+def accumulate(self, *args, **kwargs):
+    return 1
+
+2025-12-12 21:55:01,439 : celery.utils.functional : DEBUG : 
+def schedule_monitoring():
+    return 1
+
+2025-12-12 21:55:01,439 : celery.utils.functional : DEBUG : 
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+2025-12-12 21:55:01,440 : celery.utils.functional : DEBUG : 
+def chunks(task, it, n):
+    return 1
+
+2025-12-12 21:55:01,440 : celery.utils.functional : DEBUG : 
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+2025-12-12 21:55:01,440 : celery.utils.functional : DEBUG : 
+def send_alert_email(user_email, monitor_name, monitor_user_name, monitor_url, monitor_status, ai_recommendations, monitor_check_interval):
+    return 1
+
+2025-12-12 21:55:01,441 : celery.utils.functional : DEBUG : 
+def check_monitor(monitor_id):
+    return 1
+
+2025-12-12 21:55:01,441 : celery.utils.functional : DEBUG : 
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+2025-12-12 21:55:01,441 : celery.utils.functional : DEBUG : 
+def xmap(task, it):
+    return 1
+
+2025-12-12 21:55:01,441 : celery.utils.functional : DEBUG : 
+def backend_cleanup():
+    return 1
+
+2025-12-12 21:57:14,421 : celery.utils.functional : DEBUG : 
+def backend_cleanup():
+    return 1
+
+2025-12-12 21:57:14,422 : celery.utils.functional : DEBUG : 
+def chain(*args, **kwargs):
+    return 1
+
+2025-12-12 21:57:14,422 : celery.utils.functional : DEBUG : 
+def xstarmap(task, it):
+    return 1
+
+2025-12-12 21:57:14,422 : celery.utils.functional : DEBUG : 
+def accumulate(self, *args, **kwargs):
+    return 1
+
+2025-12-12 21:57:14,422 : celery.utils.functional : DEBUG : 
+def check_monitor(monitor_id):
+    return 1
+
+2025-12-12 21:57:14,423 : celery.utils.functional : DEBUG : 
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+2025-12-12 21:57:14,423 : celery.utils.functional : DEBUG : 
+def send_alert_email(user_email, monitor_name, monitor_user_name, monitor_url, monitor_status, ai_recommendations, monitor_check_interval):
+    return 1
+
+2025-12-12 21:57:14,423 : celery.utils.functional : DEBUG : 
+def chunks(task, it, n):
+    return 1
+
+2025-12-12 21:57:14,424 : celery.utils.functional : DEBUG : 
+def schedule_monitoring():
+    return 1
+
+2025-12-12 21:57:14,424 : celery.utils.functional : DEBUG : 
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+2025-12-12 21:57:14,424 : celery.utils.functional : DEBUG : 
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+2025-12-12 21:57:14,425 : celery.utils.functional : DEBUG : 
+def xmap(task, it):
+    return 1
+
+2025-12-12 21:57:35,304 : celery.utils.functional : DEBUG : 
+def chain(*args, **kwargs):
+    return 1
+
+2025-12-12 21:57:35,304 : celery.utils.functional : DEBUG : 
+def xstarmap(task, it):
+    return 1
+
+2025-12-12 21:57:35,304 : celery.utils.functional : DEBUG : 
+def accumulate(self, *args, **kwargs):
+    return 1
+
+2025-12-12 21:57:35,305 : celery.utils.functional : DEBUG : 
+def schedule_monitoring():
+    return 1
+
+2025-12-12 21:57:35,305 : celery.utils.functional : DEBUG : 
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+2025-12-12 21:57:35,305 : celery.utils.functional : DEBUG : 
+def chunks(task, it, n):
+    return 1
+
+2025-12-12 21:57:35,305 : celery.utils.functional : DEBUG : 
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+2025-12-12 21:57:35,306 : celery.utils.functional : DEBUG : 
+def send_alert_email(user_email, monitor_name, monitor_user_name, monitor_url, monitor_status, ai_recommendations, monitor_check_interval):
+    return 1
+
+2025-12-12 21:57:35,306 : celery.utils.functional : DEBUG : 
+def check_monitor(monitor_id):
+    return 1
+
+2025-12-12 21:57:35,306 : celery.utils.functional : DEBUG : 
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+2025-12-12 21:57:35,306 : celery.utils.functional : DEBUG : 
+def xmap(task, it):
+    return 1
+
+2025-12-12 21:57:35,307 : celery.utils.functional : DEBUG : 
+def backend_cleanup():
+    return 1
+

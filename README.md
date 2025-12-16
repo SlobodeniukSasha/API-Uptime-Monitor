@@ -36,12 +36,12 @@ alembic upgrade head
 ### Run the development server
 
 ```commandline
-python manage.py runserver
+uvicorn backend.app.main:app
 ```
 
 ### Swagger & ReDoc
 
-* Swagger UI → http://localhost:8000/swagger/
+* Swagger UI → http://localhost:8000/docs/
 * ReDoc → http://localhost:8000/redoc/
 
 ### Running tests
